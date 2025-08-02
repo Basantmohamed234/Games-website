@@ -1,0 +1,51 @@
+*****create database in (http://localhost/phpmyadmin)******
+1-New
+2-Database name(my project)
+3-go to sql
+4-write
+the database content(
+CREATE TABLE messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE games (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    category VARCHAR(255) NOT NULL,
+    image VARCHAR(255),
+    description TEXT,
+    howToPlay TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE admins (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- إدخال أدمن افتراضي
+INSERT INTO admins (username, password)
+VALUES ('admin', '$2y$10$nU6BV4Vjrk3tYfkU8c6C9.S0IctfkbEgkwP2Y0HI6HRYwnk8szwDq');
+
+)
+4-click go
+
+
+5-run file (insert_games.php)in the browser -> (http://http://localhost/web_project-main/web_project-main/web_project/main_project/insert_games.php)
+6-open the signup(http://http://localhost/web_project-main/web_project-main/web_project/main_project/signup.php)
